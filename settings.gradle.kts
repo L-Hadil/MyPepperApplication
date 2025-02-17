@@ -1,26 +1,21 @@
 pluginManagement {
     repositories {
-        google {
-            content {
-                includeGroupByRegex("com\\.android.*")
-                includeGroupByRegex("com\\.google.*")
-                includeGroupByRegex("androidx.*")
-            }
-        }
-        mavenCentral()
         gradlePluginPortal()
+        google()
+        mavenCentral()
     }
 }
+
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
         mavenCentral()
+        // Si tu utilises QiSDK, ajoute le repo SoftBank
         maven {
             url = uri("https://qisdk.softbankrobotics.com/sdk-beta/maven")
         }
     }
 }
 
-rootProject.name = "My Pepper Application"
+rootProject.name = "MyPepperApplication"
 include(":app")
